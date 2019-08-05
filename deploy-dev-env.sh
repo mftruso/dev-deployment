@@ -1,29 +1,19 @@
 #! /bin/bash
 echo Setting up Servant\' Code Development Environment:
 
-echo;
-echo Checking Docker version:
-docker.exe version
+./verify_prereqs.sh
 if [ $? != 0 ]; then
-  echo Docker not found!! Please verify Docker installation before continuing...;
-  exit 1;
+  exit $?;
 fi
 
-echo;
-echo Checking Kubernetes version:
-kubectl.exe version
-if [ $? != 0 ]; then
-  echo Kubectl not found!! Please verify Kubernetes installation before continuing...;
-  exit 1;
-fi
-
+. ./bin/all.sh
 pushd .. > /dev/null;
 
 git clone git@github.com:servantscode/java-commons.git
 git clone git@github.com:servantscode/docker-elk.git
 git clone git@github.com:servantscode/tomcat-elk-logging.git
+git clone git@github.com:servantscode/fake-data.git
 
-. ./all.sh
 echo Pulling Servant\'s Code repos: $PROJECTS
 
 for dir in $PROJECTS; do
@@ -33,8 +23,20 @@ for dir in $PROJECTS; do
 done
 
 cp dev-deployment/bin/*.sh .
-./rebuild_all.sh
+./build_all.sh
+
+echo;
+echo Starting elk stack;
+pushd docker-elk > /dev/null;
+make run;
+popd > /dev/null;
+
+./start_all.sh
+
+popd > /dev/null;
+
+./deploy-configmaps.sh
+./deploy-ingress.sh
 
 echo;
 echo Servant's Code development setup complete!!
-popd
