@@ -23,6 +23,9 @@ for dir in $PROJECTS; do
   if [ -f build.gradle ]; then
     gradle war;
   fi
+  if [ -f package.json ]; then
+    npm install;
+  fi
   make build;
   popd > /dev/null;
 done

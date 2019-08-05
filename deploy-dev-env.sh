@@ -1,7 +1,7 @@
 #! /bin/bash
 echo Setting up Servant\' Code Development Environment:
 
-./verify_prereqs.sh
+./install/verify_prereqs.sh
 if [ $? != 0 ]; then
   exit $?;
 fi
@@ -25,6 +25,10 @@ done
 cp dev-deployment/bin/*.sh .
 ./build_all.sh
 
+pushd parish-manager-ui > /dev/null;
+npm install;
+popd > /dev/null;
+
 echo;
 echo Starting elk stack;
 pushd docker-elk > /dev/null;
@@ -35,8 +39,8 @@ popd > /dev/null;
 
 popd > /dev/null;
 
-./deploy-configmaps.sh
-./deploy-ingress.sh
+./install/deploy-configmaps.sh
+./install/deploy-ingress.sh
 
 echo;
 echo Servant's Code development setup complete!!
