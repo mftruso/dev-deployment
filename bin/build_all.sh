@@ -16,6 +16,12 @@ pushd tomcat-elk-logging > /dev/null;
 make build;
 popd > /dev/null;
 
+echo;
+echo "Building docker-elk";
+pushd docker-elk > /dev/null;
+make build;
+popd > /dev/null;
+
 for dir in $PROJECTS; do
   pushd $dir > /dev/null;
   echo;
