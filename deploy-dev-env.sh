@@ -41,4 +41,4 @@ pushd install > /dev/null;
 popd > /dev/null;
 
 echo;
-echo Servant's Code development setup complete!!
+echo Servant\'s Code development setup complete!!
