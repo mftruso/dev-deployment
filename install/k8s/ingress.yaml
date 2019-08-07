@@ -111,7 +111,7 @@ spec:
         backend:
           serviceName: parish-svc
           servicePort: 8080
-      - path: /rest/catetory
+      - path: /rest/category
         backend:
           serviceName: parish-svc
           servicePort: 8080
