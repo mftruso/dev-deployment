@@ -25,20 +25,9 @@ done
 cp dev-deployment/bin/*.sh .
 ./build_all.sh
 
-echo;
-echo Starting elk stack;
-pushd docker-elk > /dev/null;
-make run;
 popd > /dev/null;
 
-./start_all.sh
-
-popd > /dev/null;
-
-pushd install > /dev/null;
-./deploy-configmaps.sh
-./deploy-ingress.sh
-popd > /dev/null;
+./deploy_all.sh
 
 echo;
 echo Servant\'s Code development setup complete!!
