@@ -115,6 +115,10 @@ spec:
         backend:
           serviceName: parish-svc
           servicePort: 8080
+      - path: /rest/search
+        backend:
+          serviceName: search-svc
+          servicePort: 8080
       - path: /logs
         backend:
           serviceName: kibana
