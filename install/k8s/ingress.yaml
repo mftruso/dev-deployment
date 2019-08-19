@@ -119,6 +119,18 @@ spec:
         backend:
           serviceName: search-svc
           servicePort: 8080
+      - path: /rest/program
+        backend:
+          serviceName: formation-svc
+          servicePort: 8080
+      - path: /rest/class
+        backend:
+          serviceName: formation-svc
+          servicePort: 8080
+      - path: /rest/sacramentalGroup
+        backend:
+          serviceName: formation-svc
+          servicePort: 8080
       - path: /logs
         backend:
           serviceName: kibana
