@@ -123,10 +123,6 @@ spec:
         backend:
           serviceName: formation-svc
           servicePort: 8080
-      - path: /rest/section
-        backend:
-          serviceName: formation-svc
-          servicePort: 8080
       - path: /rest/sacramental-group
         backend:
           serviceName: formation-svc
