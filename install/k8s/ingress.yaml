@@ -127,10 +127,6 @@ spec:
         backend:
           serviceName: formation-svc
           servicePort: 8080
-      - path: /rest/registration
-        backend:
-          serviceName: formation-svc
-          servicePort: 8080
       - path: /logs
         backend:
           serviceName: kibana
