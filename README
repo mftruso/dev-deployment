@@ -35,7 +35,6 @@ With Kubernetes running you can configure the Servant's Code development environ
 Database setup:
 Populating the database. There are two database scripts that you'll need to get the database populated.
 - fake-data:/src/main/db/db-setup-sql (Database creation and initial system admin creation)
-- person-svc:/src/main/db/servantscode.sql (Table creation)
 
 Connect to postgres pod: 
 NOTE: This requires TTY, try windows cmd, if your local Linux prompt is not TTY enabled.
@@ -45,5 +44,4 @@ Login to postgres
 - psql -h localhost -U postgres
 - Paste database and db user creation from fake-data
 - \c servantscode servant1
-- Paste table creation from person-svc
 - Paste system role and user creation from fake-data
