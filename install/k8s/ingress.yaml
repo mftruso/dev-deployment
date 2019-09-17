@@ -23,6 +23,10 @@ spec:
         backend:
           serviceName: person-svc
           servicePort: 8080
+      - path: /rest/registration
+        backend:
+          serviceName: person-svc
+          servicePort: 8080
       - path: /rest/login
         backend:
           serviceName: permission-svc
