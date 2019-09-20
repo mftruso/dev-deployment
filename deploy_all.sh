@@ -18,7 +18,11 @@ pushd person-svc > /dev/null;
 make run-postgres
 popd > /dev/null;
 
-echo Configuring posgres;
+while [ -n "`kube get pods | grep postgres | grep Running`" ] ; do
+  sleep 10;
+done
+
+echo Configuring postgres;
 ./setup_db.sh
 
 echo;
