@@ -13,6 +13,15 @@ make run;
 popd > /dev/null;
 
 echo;
+echo Starting postgres;
+pushd person-svc > /dev/null;
+make run-postgres
+popd > /dev/null;
+
+echo Configuring posgres;
+./setup_db.sh
+
+echo;
 echo Starting services;
 ./start_all.sh
 
