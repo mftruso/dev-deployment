@@ -135,6 +135,10 @@ spec:
         backend:
           serviceName: kibana
           servicePort: 5601
+      - path: /registration
+        backend:
+          serviceName: parishioner
+          servicePort: 80
       - path: /
         backend:
           serviceName: parish-manager
