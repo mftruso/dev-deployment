@@ -95,6 +95,10 @@ spec:
         backend:
           serviceName: schedule-svc
           servicePort: 8080
+      - path: /rest/calendar
+        backend:
+          serviceName: schedule-svc
+          servicePort: 8080
       - path: /rest/photo
         backend:
           serviceName: photo-svc
