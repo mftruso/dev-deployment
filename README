@@ -24,7 +24,7 @@ apt install npm
 
 ** Angular CLI
 npm install -g @angular/cli
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
 // Restart bash to finish installation
 nvm install node
 nvm use node
