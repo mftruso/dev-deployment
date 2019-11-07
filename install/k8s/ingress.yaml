@@ -115,6 +115,10 @@ spec:
         backend:
           serviceName: sacrament-svc
           servicePort: 8080
+      - path: /rest/parish
+        backend:
+          serviceName: parish-svc
+          servicePort: 8080
       - path: /rest/department
         backend:
           serviceName: parish-svc
