@@ -31,6 +31,10 @@ spec:
         backend:
           serviceName: permission-svc
           servicePort: 8080
+      - path: /rest/checkin
+        backend:
+          serviceName: permission-svc
+          servicePort: 8080
       - path: /rest/credential
         backend:
           serviceName: permission-svc
