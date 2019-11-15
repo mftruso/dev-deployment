@@ -143,6 +143,14 @@ spec:
         backend:
           serviceName: formation-svc
           servicePort: 8080
+      - path: /rest/integration
+        backend:
+          serviceName: integration-svc
+          servicePort: 8080
+      - path: /rest/systemIntegration
+        backend:
+          serviceName: integration-svc
+          servicePort: 8080
       - path: /logs
         backend:
           serviceName: kibana

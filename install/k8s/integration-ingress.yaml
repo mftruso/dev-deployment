@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: integration-ingress
+spec:
+  rules:
+  - host: 'localhost2' 
+    http: 
+      paths:
+      - path: /rest/pushpay
+        backend:
+          serviceName: integration-svc
+          servicePort: 8080
