@@ -12,7 +12,7 @@ popd > /dev/null;
 
 echo;
 echo "Building api-client";
-pushd java-commons > /dev/null;
+pushd api-client > /dev/null;
 gradle install;
 popd > /dev/null;
 
