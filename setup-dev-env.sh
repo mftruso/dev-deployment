@@ -10,6 +10,7 @@ fi
 pushd .. > /dev/null;
 
 git clone git@github.com:servantscode/java-commons.git
+git clone git@github.com:servantscode/api-client.git
 git clone git@github.com:servantscode/docker-elk.git
 git clone git@github.com:servantscode/tomcat-elk-logging.git
 git clone git@github.com:servantscode/fake-data.git

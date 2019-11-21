@@ -11,6 +11,12 @@ gradle install;
 popd > /dev/null;
 
 echo;
+echo "Building api-client";
+pushd java-commons > /dev/null;
+gradle install;
+popd > /dev/null;
+
+echo;
 echo "Building tomcat-elk-logging";
 pushd tomcat-elk-logging > /dev/null;
 make build;
