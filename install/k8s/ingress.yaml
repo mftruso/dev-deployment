@@ -163,3 +163,10 @@ spec:
         backend:
           serviceName: parish-manager
           servicePort: 80
+  - host: 'localhost3' 
+    http: 
+      paths:
+      - path: /
+        backend:
+          serviceName: parishioner
+          servicePort: 80

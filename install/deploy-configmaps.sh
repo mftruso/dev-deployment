@@ -8,4 +8,5 @@ kubectl.exe create secret generic db-client-secrets --from-file=./db_user --from
 kubectl.exe create secret generic jwt-key --from-file=./jwt-key
 kubectl.exe create secret generic secure-key --from-file=./secure-key
 kubectl.exe create configmap host-url --from-file=./host-url
+kubectl.exe create configmap app-config --from-file=./env.js
 popd > /dev/null;
